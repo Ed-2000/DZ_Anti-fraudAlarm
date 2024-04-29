@@ -12,7 +12,7 @@ public class RogueMovement : MonoBehaviour
     private void Update()
     {
         if (Vector3.Distance(transform.position, _waypoints[_currentWaypointIndex].position) <= _minDistanceToWaypoint)
-            _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Count;
+            _currentWaypointIndex = ++_currentWaypointIndex % _waypoints.Count;
 
         Move();
     }
