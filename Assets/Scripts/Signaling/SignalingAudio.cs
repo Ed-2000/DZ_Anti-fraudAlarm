@@ -34,15 +34,15 @@ public class SignalingAudio : MonoBehaviour
     private void TurnOnSignaling()
     {
         _audioSource.Play();
-        CoroutineSwitcher(_maxVolume);
+        ChangeVolume(_maxVolume);
     }
 
     private void TurnOffSignaling()
     {
-        CoroutineSwitcher(_minVolume);
+        ChangeVolume(_minVolume);
     }
 
-    private void CoroutineSwitcher(float targetVolume)
+    private void ChangeVolume(float targetVolume)
     {
         if (_currentCoroutine != null)
             StopCoroutine(_currentCoroutine);

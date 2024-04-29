@@ -9,13 +9,13 @@ public class Signaling : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Rogue>(out Rogue rogue))
+        if (other.TryGetComponent(out Rogue _))
             RogueCameIn?.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<Rogue>(out Rogue rogue))
+        if (other.TryGetComponent(out Rogue _))
             RogueIsOut?.Invoke();
     }
 }
